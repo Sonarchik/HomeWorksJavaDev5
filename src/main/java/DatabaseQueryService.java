@@ -14,8 +14,7 @@ public class DatabaseQueryService {
     public List<MaxProjectClient> findMaxProjectsClient() {
         List<MaxProjectClient> maxProjectClientList = new ArrayList<>();
 
-        Database database = Database.getInstance();
-        try (Connection connection = database.getConnection();
+        try (Connection connection = Database.getInstance().getConnection();
              PreparedStatement preparedStatement = connection
                      .prepareStatement(FileReaderDB.getFileReadDB(INIT_DB_FILE_MAX_PROJECTS_CLIENT));
              ResultSet rs = preparedStatement.executeQuery()) {
@@ -30,15 +29,13 @@ public class DatabaseQueryService {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        database.close();
         return maxProjectClientList;
     }
 
     public List<MaxSalaryWorker> findMaxSalaryWorker() {
         List<MaxSalaryWorker> maxSalaryWorkerList = new ArrayList<>();
 
-        Database database = Database.getInstance();
-        try (Connection connection = database.getConnection();
+        try (Connection connection = Database.getInstance().getConnection();
              PreparedStatement preparedStatement = connection
                      .prepareStatement(FileReaderDB.getFileReadDB(INIT_DB_FILE_MAX_SALARY_WORKER));
              ResultSet rs = preparedStatement.executeQuery()) {
@@ -53,15 +50,13 @@ public class DatabaseQueryService {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        database.close();
         return maxSalaryWorkerList;
     }
 
     public List<LongestProject> findLongestProject() {
         List<LongestProject> longestProjectList = new ArrayList<>();
 
-        Database database = Database.getInstance();
-        try (Connection connection = database.getConnection();
+        try (Connection connection = Database.getInstance().getConnection();
              PreparedStatement preparedStatement = connection
                      .prepareStatement(FileReaderDB.getFileReadDB(INIT_DB_FILE_LONGEST_PROJECT));
              ResultSet rs = preparedStatement.executeQuery()) {
@@ -77,15 +72,13 @@ public class DatabaseQueryService {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        database.close();
         return longestProjectList;
     }
 
     public List<YoungestEldestWorkers> findYoungestOrEldestWorkers() {
         List<YoungestEldestWorkers> youngestOrEldestWorkersList = new ArrayList<>();
 
-        Database database = Database.getInstance();
-        try (Connection connection = database.getConnection();
+        try (Connection connection = Database.getInstance().getConnection();
              PreparedStatement preparedStatement = connection
                      .prepareStatement(FileReaderDB.getFileReadDB(INIT_DB_FILE_YOUNGER_ELDEST_WORKERS));
              ResultSet rs = preparedStatement.executeQuery()) {
@@ -102,15 +95,13 @@ public class DatabaseQueryService {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        database.close();
         return youngestOrEldestWorkersList;
     }
 
     public List<ProjectPrices> findProjectPrices() {
         List<ProjectPrices> projectPricesList = new ArrayList<>();
 
-        Database database = Database.getInstance();
-        try (Connection connection = database.getConnection();
+        try (Connection connection = Database.getInstance().getConnection();
              PreparedStatement preparedStatement = connection
                      .prepareStatement(FileReaderDB.getFileReadDB(INIT_DB_FILE_PROJECT_PRICE));
              ResultSet rs = preparedStatement.executeQuery()) {
@@ -126,7 +117,6 @@ public class DatabaseQueryService {
         } catch (Exception ex) {
             ex.printStackTrace();
         }
-        database.close();
         return projectPricesList;
     }
 }
