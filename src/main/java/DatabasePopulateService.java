@@ -21,6 +21,7 @@ public class DatabasePopulateService {
                 "2023-01-01", "2024-03-07", "2026-03-06", "2024-01-10", "2030-09-03"};
         int[] projectsId = {1, 2, 2, 2, 2, 3, 3, 3, 3, 4, 4, 4, 5, 5, 6, 6, 7, 7, 7, 8, 8, 9, 9, 10, 10, 10, 10, 10};
         int[] workersId = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1, 2, 3, 4, 5, 3, 4, 5, 2, 4, 5, 1, 3, 1, 3, 9, 7, 8};
+
         addWorkers(workersName, workersBirthday, workersLevel, workersSalary);
         addClients(clientsName);
         addProjects(clientsId, projectsStartDate, projectsFinishDate);
